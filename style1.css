@@ -1,0 +1,174 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'Android';
+    src: url('fontes/idroid.otf');/* Se nao funcionar coloque ../ que indica volte uma pasta e depois acesse*/
+    font-weight: normal; 
+}                            
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+:root{
+    --cor0:#84E1AD;
+    --cor1:#41D983;
+    --cor2:#1B5936;
+    --cor3:#3DD973;
+    --cor4:#2A8C4C;
+    --cor5:#22733F;
+
+    --fonte-padrao: 'Times New Roman', Times, serif;
+    --fonte-destaque: 'Bebas Neue', cursive;
+    --fonte-android: 'Android';
+}
+*{
+    margin: 0px;  /*Config global*/
+    padding: 0px;
+}
+body{
+    font-family: var(--fonte-padrao);
+    margin: 0px;
+    background-color: var(--cor0);
+}
+a.externo::after{   /*Para os links da classe externo, depois de colocar eles aparecer o conteudo(emoji)*/
+    content: '\00A0\1F517'; /*Colocando emoji de link depois do link*/    
+}
+header{
+    background-image: linear-gradient(to bottom, #41D983, #1B5936, #3DD973, #2A8C4C, #22733F);
+    background-attachment: fixed;
+    text-align: center;
+    padding: 10px;
+    margin: 0px;
+    color: white;
+    font-style: bold;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.397);
+}
+header > h1{
+    font-size: 3em;
+    font-family: var(--fonte-destaque);
+    font-weight: normal;
+}
+header > p{
+    font-family: var(--fonte-destaque);
+    font-size: 1.2em;
+    max-width: 500px;   /*Para deixar mais centralizado*/
+    margin: auto;
+    padding: 0px 10px;
+    margin-bottom: 20px;    /*Vai dar um espacamento do paragrafo quando a tela ficar mt pequena*/
+}
+nav{
+    background-image: linear-gradient(to bottom, #41D983, #1B5936, #3DD973, #2A8C4C, #22733F);
+    background-attachment: fixed;
+    text-align: justify;
+    padding: 10px;
+    margin: 0px;
+    font-style: bold;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.397);
+    transition-duration: 0.5s;
+}
+nav > a{
+    text-decoration: none;
+    color: white;
+    margin: 3px;
+    padding: 10px;
+}
+nav > a:hover{
+    background-color: var(--cor3);
+    transition-duration: 0.5s;
+}
+main{                           /*Responsividade(largura minima e maxima, e margem automatica pra centralizar)*/
+    background-color: white;
+    min-width: 300px;
+    max-width: 1000px;
+    margin: auto;
+    margin-bottom: 30px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.418);
+    border-radius: 0px 0px 10px 10px;
+}
+main p{     /*Para todo P dentro do main, mesmo se tiver dentro de outras coisas no main*/
+    margin: 15px 0px;
+    text-align: justify;
+    text-indent: 30px;  /*Espaco no inicio do paragrafo*/
+    line-height: 1em;
+}
+main a{ /*Para todo A dentro do main, mesmo se tiver dentro de outras coisas no main*/
+    color: var(--cor2);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 2px 4px; /*Eh utilizado para dar mais destaque*/
+    background-color: var(--cor0);
+}
+main a:hover{
+    text-decoration: underline;
+    color: var(--cor5);
+}
+
+main strong{    /*Para os nomes em destaque que estao com strong*/
+    color: var(--cor4);
+    font-weight: bold;
+    padding: 2px 4px;
+}
+main img{               /*Faz com que as imagens se espremam e se adapte*/
+    width: 100%;
+    display: block;
+    margin: auto;
+}
+main img.pequena{  /*Para imagens que parecem muito grandes*/
+    max-width: 350px;
+}
+main > article > h1{
+    font-family: var(--fonte-android); 
+    color: var(--cor2);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.596);
+    font-weight: normal;
+}
+main > article > h2{
+    font-family: var(--fonte-android);  
+    color: var(--cor5);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.596);
+    background-image: linear-gradient(to right, #A0C9B3, #E2F5EA, #FAFDFC, white);
+    font-size: 1.3em;
+    text-indent: 8px;
+    font-weight: normal;
+}
+div.video{
+    background-color: var(--cor2);
+    margin: 0px -20px 30px -20px;
+    padding: 20px;
+
+    padding-bottom: 60%;    /*Espacamento de baixo, e tira as margens pretas do video*/
+    position: relative;     /*Necessario para a gambiarra do video, dizendo que o dominante eh o iframe*/
+}
+div.video > iframe{
+    position: absolute;     /*Habilita configuracao manual de tudo*/
+    top: 5%;    /*Distancia de cima pro video*/
+    left: 5%;   /*Distancia de baixo pro video*/
+    width: 90%; /*O video ocupa 90% da altura total*/
+    height: 90%;    /*O video ocupa 90% da largura total*/
+}
+aside{
+    background-color: var(--cor0);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.418);
+}
+aside > h3{
+    background-color: var(--cor2);
+    color: white;
+    padding: 10px;
+    margin: -10px -10px 0px -10px;  /*Colocando o fundo do h3 encima das bordas do aside*/
+    border-radius: 10px 10px 0px 0px;
+    font-weight: normal;
+}
+aside > ul{
+    list-style-position: inside;    /*Coloca a ponto da lista dentro do ul*/
+    columns: 2;     /*Divide a lista em colunas*/
+    list-style-type: '\2714\00A0\00A0';     /*Emoji de check*/
+}
+footer{
+    background-color: var(--cor2);
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.8em;
+    padding: 5px;
+}
